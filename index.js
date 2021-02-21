@@ -291,7 +291,7 @@ class AntiSpamClient extends EventEmitter {
 				})
 			}
 			if (this.options.modLogsEnabled) {
-				this.log(message, `Spam detected: ${message.author} got **banned**`, message.client)
+				this.log(message, `Spam detected: ${message.author} a été **banni**`, message.client)
 			}
 			this.emit('banAdd', member)
 			return true
@@ -316,7 +316,7 @@ class AntiSpamClient extends EventEmitter {
 		const userCanBeMuted = role && message.guild.me.hasPermission('MANAGE_ROLES') && (message.guild.me.roles.highest.position > message.member.roles.highest.position)
 		if (!userCanBeMuted) {
 			if (this.options.verbose) {
-				console.log(`DAntiSpam (kickUser#userNotMutable): ${message.author.tag} (ID: ${message.author.id}) could not be muted, improper permissions or the mute role couldn't be found.`)
+				console.log(`DAntiSpam (kickUser#userNotMutable): ${message.author.tag} (ID: ${message.author.id}) ne peut pas être mute car il n'y a pas de rôle \`mute\`.`)
 			}
 			if (this.options.errorMessages) {
 				await message.channel
