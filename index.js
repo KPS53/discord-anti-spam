@@ -160,9 +160,9 @@ class AntiSpamClient extends EventEmitter {
 			banMessage: options.banMessage || '**{user_tag}** has been banned for spamming.',
 
 			errorMessages: options.errorMessages || true,
-			kickErrorMessage: options.kickErrorMessage || 'Could not kick **{user_tag}** because of improper permissions.',
-			banErrorMessage: options.banErrorMessage || 'Could not ban **{user_tag}** because of improper permissions.',
-			muteErrorMessage: options.muteErrorMessage || 'Could not mute **{user_tag}** because of improper permissions or the mute role couldn\'t be found.',
+			kickErrorMessage: options.kickErrorMessage || 'Je n\'ai pas pu exclure **{user_tag}** car je n\'ai pas les permissions requises.',
+			banErrorMessage: options.banErrorMessage || 'Je n\'ai pas pu banni **{user_tag}** car je n\'ai pas les permissions requises.',
+			muteErrorMessage: options.muteErrorMessage || 'Je n\'ai pas pu mute **{user_tag}** car je n\'ai pas les permissions requises. ou le rôle n\' pas été défini.',
 
 			ignoredMembers: options.ignoredMembers || [],
 			ignoredRoles: options.ignoredRoles || [],
@@ -291,7 +291,7 @@ class AntiSpamClient extends EventEmitter {
 				})
 			}
 			if (this.options.modLogsEnabled) {
-				this.log(message, `Spam detected: ${message.author} a été **banni**`, message.client)
+				this.log(message, `Spam détecté: ${message.author} a été **banni**`, message.client)
 			}
 			this.emit('banAdd', member)
 			return true
